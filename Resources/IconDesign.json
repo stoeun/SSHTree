@@ -1,0 +1,23 @@
+{
+  "name": "SSHTree Terminal S",
+  "date": "2026-10-04",
+  "selected_artwork": "AppIcon.icon/Assets/TerminalS.png",
+  "mono_outline": "AppIcon.icon/Assets/TerminalS-Mono.svg",
+  "native_document": "AppIcon.icon",
+  "preview": "IconPreview.png",
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "prompt": "Use case: compositing / logo-brand. Asset: a fused SSHTree native macOS app icon concept. Use reference image 1 (B-terminal) as the exact style anchor for the dark charcoal Liquid Glass rounded-square terminal tile and emerald cursor. Use reference image 2 (D-monogram) only as the source of the sculpted continuous glass-ribbon capital S silhouette. Combine them into one highly polished, simple new icon.\n\nKeep the first reference's upright graphite-black rounded square, continuous smooth macOS corners, restrained soft teal light along the lower edge, subtle glass edge and clean upper-left lighting. Change the foreground to a single terminal command line reading EXACTLY \"> S_\" from left to right. A large beautifully flowing capital S is the focal point in the middle, formed from the pale mint-to-pearl translucent glass ribbon of reference 2. A smaller pearly glass chevron '>' sits on the left of the S; a short emerald teal glass cursor underscore '_' sits on the lower right, aligned with the S baseline. The S should feel displayed in the dark terminal. Keep the command line as one coherent, centered visual group, with generous precise spacing, balanced proportions and ample breathing room inside the tile. The S is about 49% of the tile height and 35% of its width; the chevron is about half the S height, and the cursor is small. Maintain a bold recognizable silhouette at Dock sizes.\n\nDo not add a second window frame, title bar, control dots, tree, other letters, watermark, labels, decorative particles or cables. No perspective tilt. No grain, noise, scratches, rough edges, mottled texture, jagged matte or stray pixels. Shallow native glass depth and restrained silky highlights, not thick chrome or plastic. Transparent outside the rounded-square tile, with a perfectly smooth, clean antialiased outer contour. Produce one icon only, not a comparison grid.",
+    "references": [
+      "dark glass terminal concept",
+      "pale-mint glass-ribbon S concept"
+    ]
+  },
+  "native_adaptation": {
+    "color": "Approved artwork retained without raster editing; glass disabled for the color layer.",
+    "mono": "Separate original SVG silhouette, visible only for the tinted appearance.",
+    "source_canvas": 1254,
+    "scale": 0.89,
+    "design_generation": 27
+  }
+}

@@ -1,4 +1,10 @@
 .build/
 dist/
 release/
+DerivedData/
+.superpowers/
 .DS_Store
+*.xcuserstate
+xcuserdata/
+*.log
+.env

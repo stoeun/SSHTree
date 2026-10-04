@@ -1,37 +1,19 @@
-// swift-tools-version: 6.0
-
+// swift-tools-version: 6.4
 import PackageDescription
 
 let package = Package(
-    name: "Harbor",
-    platforms: [
-        .macOS(.v15)
-    ],
+    name: "SSHTree",
+    platforms: [.macOS("27.0")],
     products: [
-        .library(name: "HarborKit", targets: ["HarborKit"]),
-        .executable(name: "Harbor", targets: ["Harbor"]),
-        .executable(name: "HarborSelfTest", targets: ["HarborSelfTest"])
+        .library(name: "SSHTreeCore", targets: ["SSHTreeCore"]),
+        .executable(name: "SSHTree", targets: ["SSHTree"]),
+        .executable(name: "SSHTreeAskPass", targets: ["SSHTreeAskPass"])
     ],
-    dependencies: [
-        .package(path: "ThirdParty/SwiftTerm")
-    ],
+    dependencies: [.package(url: "https://github.com/migueldeicaza/SwiftTerm.git", exact: "1.20.0")],
     targets: [
-        .target(
-            name: "HarborKit",
-            path: "Sources/HarborKit"
-        ),
-        .executableTarget(
-            name: "Harbor",
-            dependencies: [
-                "HarborKit",
-                .product(name: "SwiftTerm", package: "SwiftTerm")
-            ],
-            path: "Sources/Harbor"
-        ),
-        .executableTarget(
-            name: "HarborSelfTest",
-            dependencies: ["HarborKit"],
-            path: "Sources/HarborSelfTest"
-        )
+        .target(name: "SSHTreeCore"),
+        .executableTarget(name: "SSHTree", dependencies: ["SSHTreeCore", .product(name: "SwiftTerm", package: "SwiftTerm")]),
+        .executableTarget(name: "SSHTreeAskPass", dependencies: ["SSHTreeCore"]),
+        .testTarget(name: "SSHTreeCoreTests", dependencies: ["SSHTreeCore"])
     ]
 )
