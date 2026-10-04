@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 APP="dist/SSHTree.app"
-OUT="dist/SSHTree.dmg"
+OUT="release/SSHTree.dmg"
 VOL="SSHTree"
 
 if [[ ! -d "$APP" ]]; then
@@ -70,6 +70,7 @@ APPLESCRIPT
 
 sync
 detach
+mkdir -p "$(dirname "$OUT")"
 rm -f "$OUT"
 hdiutil convert "$WORK/rw.dmg" -format UDZO -imagekey zlib-level=9 -o "$OUT" >/dev/null
 echo "Built $OUT"
