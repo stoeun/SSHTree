@@ -41,7 +41,8 @@ final class StorageSignerTests: XCTestCase {
         XCTAssertTrue(additional.hasSuffix("Signature=4a4183c187c07c8947db7620deb0a6b38d9fbdd34187b6dbaccb316fa251212f"), additional)
     }
     func testCOSOfficialIndependentSignatureVector() {
-        let credentials = CloudCredentials(accessKeyID: "AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q", secretKey: "BQYIM75p8x0iWVFSIgqEKwFprpRSVHlz")
+        // q-ak is not a signature input; use a synthetic ID with Tencent's published signing vector.
+        let credentials = CloudCredentials(accessKeyID: "sshtree-test-access-key", secretKey: "BQYIM75p8x0iWVFSIgqEKwFprpRSVHlz")
         let auth = CloudSigner.cosAuthorization(method: "GET", path: "/testfile", query: [:], headers: ["host":"bucket1-1254000000.cos.ap-beijing.myqcloud.com", "range":"bytes=0-3"], credentials: credentials, keyTime: "1417773892;1417853898")
         XCTAssertTrue(auth.hasSuffix("q-signature=4b6cbab14ce01381c29032423481ebffd514e8be"), auth)
     }
